@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>猪猪的博客</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  <style>
+    #particles-js { position: fixed; top: 0; left: 0; z-index: -1; width: 100%; height: 100%; }
+  </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <div class="container">
     <header>
       <img class="avatar" src="me.jpg" alt="猪猪头像" />
@@ -30,10 +37,26 @@
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2025 猪猪的博客 · 用代码记录温柔</p>
-    </footer>
-  </div>
-  <script src="script.js"></script>
+    
+  <!-- 音乐播放器容器 -->
+  <div id="aplayer" class="aplayer"></div>
+
+  <!-- 音乐播放器脚本 -->
+  <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+  <script>
+    const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      autoplay: true,
+      audio: [
+        {
+          name: '小美满',
+          artist: '周深',
+          url: 'https://github.com/suiyan1234/suiyan1234.github.io/blob/main/%E6%B1%9F%E5%8D%97%E7%83%9F%E9%9B%A8%E8%89%B2.mp3',
+          cover: 'https://github.com/suiyan1234/suiyan1234.github.io/blob/main/%E6%B1%9F%E5%8D%97%E7%83%9F%E9%9B%A8%E8%89%B2.png'
+        }
+      ]
+    });
+  </script>
 </body>
 </html>

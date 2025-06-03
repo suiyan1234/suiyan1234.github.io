@@ -4,6 +4,11 @@ body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+body.light-mode {
+  background: #ffffff;
+  color: #222;
 }
 .container {
   max-width: 800px;
@@ -37,6 +42,11 @@ h1 {
   cursor: pointer;
   box-shadow: 0 0 15px #00ffff;
 }
+body.light-mode #toggle-mode {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 0 15px #333;
+}
 .blog-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -48,6 +58,10 @@ h1 {
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s;
   cursor: pointer;
+}
+body.light-mode .blog-card {
+  background: #f2f2f2;
+  color: #222;
 }
 .blog-card:hover {
   transform: translateY(-5px);
