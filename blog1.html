@@ -2,70 +2,211 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>🚀 从零搭建你的 GitHub 博客</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>从零搭建你的 GitHub 博客 - Yuli的博客</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffcccc;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .subtitle {
+      color: #666;
+      margin-bottom: 15px;
+    }
+    
+    .blog-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .blog-page h1 {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ff6b6b;
+      padding-bottom: 10px;
+    }
+    
+    .blog-page p {
+      margin-bottom: 20px;
+    }
+    
+    .blog-page img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    
+    .step {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      border-left: 5px solid #ff6b6b;
+    }
+    
+    .step h3 {
+      margin-bottom: 10px;
+      color: #ff6b6b;
+    }
+    
+    .code-block {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+    
+    .back-button {
+      display: inline-block;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+    
+    .back-button:hover {
+      background-color: #555;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <a href="index.html" style="color:#00ffff;">⬅ 返回首页</a>
-    <h1>🚀 从零搭建你的 GitHub 博客</h1>
-    <p>本教程将手把手教你如何创建一个属于自己的 GitHub 个人博客网站。</p>
-
-    <h2>步骤一：准备工作</h2>
-    <ul>
-      <li>注册一个 GitHub 账号</li>
-      <li>安装 Git（建议）</li>
-    </ul>
-
-    <h2>步骤二：创建仓库</h2>
-    <ol>
-      <li>登录 GitHub，点击右上角 <strong>New repository</strong></li>
-      <li>命名仓库为：<code>yourusername.github.io</code></li>
-      <li>点击 Create repository 创建</li>
-    </ol>
-
-    <h2>步骤三：上传网站文件</h2>
-    <p>方法一：用 Git 上传</p>
-    <pre><code>git clone https://github.com/yourusername/yourusername.github.io
-# 将 index.html 等网页文件拷进去
-git add .
-git commit -m "首次上传"
-git push</code></pre>
-
-    <p>方法二：在 GitHub 网站上上传</p>
-    <ol>
-      <li>进入仓库页面，点击 <strong>Upload files</strong></li>
-      <li>上传网页文件，提交</li>
-    </ol>
-
-    <h2>步骤四：开启 GitHub Pages</h2>
-    <ol>
-      <li>点击仓库 > Settings > Pages</li>
-      <li>选择部署分支为 <code>main</code>，文件夹选 <code>root</code></li>
-      <li>几分钟后即可访问 <code>https://yourusername.github.io</code></li>
-    </ol>
-
-    <hr>
-    <p>🎉 恭喜你，猪猪也成功搭建好了自己的博客啦！</p>
-    <button onclick="likeArticle()">👍 点个赞</button>
-    <button onclick="copyLink()">📎 复制链接</button>
-    <div id="like-count" style="margin-top:10px;color:#00ffff;"></div>
+    <header>
+      <img class="avatar" src="https://placekitten.com/300/300" alt="Yuli头像">
+      <h1>Yuli的博客</h1>
+      <p class="subtitle">探索技术 · 记录生活 · 把世界点亮</p>
+    </header>
+    
+    <div class="blog-page">
+      <h1>🚀 从零搭建你的 GitHub 博客</h1>
+      <p>搭建一个自己的博客网站听起来很难，但实际上，通过GitHub Pages，你可以轻松创建一个免费、美观的个人博客。以下是一个简单的教程，带你从零开始创建属于自己的博客。</p>
+      
+      <div class="step">
+        <h3>第一步：注册GitHub账号</h3>
+        <p>如果你还没有GitHub账号，首先需要<a href="https://github.com/join" target="_blank">注册一个账号</a>。GitHub是全球最大的代码托管平台，提供了免费的代码托管服务。</p>
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="GitHub注册页面">
+      </div>
+      
+      <div class="step">
+        <h3>第二步：创建新的GitHub仓库</h3>
+        <p>登录GitHub后，点击右上角的"+"号，选择"New repository"（新建仓库）。仓库名称必须按照特定格式命名：<strong>yourusername.github.io</strong>，其中yourusername是你的GitHub用户名。</p>
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="创建GitHub仓库">
+      </div>
+      
+      <div class="step">
+        <h3>第三步：创建博客主页文件</h3>
+        <p>在你的新仓库中，创建一个名为index.html的文件。这个文件将是你的博客主页。你可以从简单的HTML代码开始：</p>
+        <div class="code-block">
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;meta charset="UTF-8"&gt;
+              &lt;title&gt;我的博客&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;h1&gt;欢迎来到我的博客!&lt;/h1&gt;
+              &lt;p&gt;这是我的第一个博客页面。&lt;/p&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+        </div>
+      </div>
+      
+      <div class="step">
+        <h3>第四步：提交并发布你的博客</h3>
+        <p>在GitHub仓库页面，点击"Settings"（设置），然后在左侧菜单中找到"Pages"选项。在这里，你可以设置仓库的分支（通常选择主分支）和文件夹路径。</p>
+        <p>保存设置后，GitHub会自动构建并发布你的网站。通常需要1-2分钟，你的博客就会在以下地址上线：</p>
+        <p><strong>https://yourusername.github.io</strong></p>
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="GitHub Pages设置">
+      </div>
+      
+      <div class="step">
+        <h3>第五步：自定义你的博客</h3>
+        <p>现在你已经有了一个基础的博客页面，你可以通过添加CSS样式、JavaScript功能和更多HTML内容来美化和扩展你的博客。</p>
+        <p>以下是一些提升博客体验的建议：</p>
+        <ul>
+          <li>添加一个导航菜单，方便访问不同页面</li>
+          <li>创建一个"关于我"页面，介绍自己</li>
+          <li>添加博客文章页面，分享你的想法和项目</li>
+          <li>使用响应式设计，确保博客在移动设备上也能良好显示</li>
+          <li>添加社交媒体链接，让更多人发现你的博客</li>
+        </ul>
+      </div>
+      
+      <div class="step">
+        <h3>第六步：添加更多内容</h3>
+        <p>随着你对HTML、CSS和JavaScript的熟悉，你可以开始添加更多内容和功能：</p>
+        <ul>
+          <li>创建博客文章，分享你的经验和技术知识</li>
+          <li>添加项目展示，展示你的作品</li>
+          <li>创建联系页面，让访客可以与你联系</li>
+          <li>添加搜索功能，方便访客查找内容</li>
+          <li>使用第三方服务添加评论功能</li>
+        </ul>
+      </div>
+      
+      <p>恭喜！你现在已经掌握了创建和运行一个GitHub博客的基本知识。随着你的技能提升，你可以不断改进和扩展你的博客网站。记住，博客不仅是展示你的技术能力的地方，也是分享你的想法、经历和知识的平台。</p>
+      
+      <a href="index.html" class="back-button">返回主页</a>
+    </div>
+    
+    <footer>
+      <p>&copy; 2023 Yuli的博客 | 探索技术与生活的点滴</p>
+    </footer>
   </div>
-
-  <script>
-    let count = localStorage.getItem("likes") || 0;
-    document.getElementById("like-count").innerText = "已有 " + count + " 人点赞";
-
-    function likeArticle() {
-      count++;
-      localStorage.setItem("likes", count);
-      document.getElementById("like-count").innerText = "已有 " + count + " 人点赞";
-    }
-
-    function copyLink() {
-      navigator.clipboard.writeText(window.location.href);
-      alert("链接已复制到剪贴板！");
-    }
-  </script>
 </body>
 </html>

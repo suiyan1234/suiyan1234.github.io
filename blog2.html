@@ -2,14 +2,208 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>博客文章2</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>效率工具 TOP 5 - Yuli的博客</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffcccc;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .subtitle {
+      color: #666;
+      margin-bottom: 15px;
+    }
+    
+    .blog-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .blog-page h1 {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ff6b6b;
+      padding-bottom: 10px;
+    }
+    
+    .blog-page p {
+      margin-bottom: 20px;
+    }
+    
+    .blog-page img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .tool-card {
+      background-color: #f9f9f9;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    
+    .tool-card h3 {
+      color: #ff6b6b;
+      margin-bottom: 10px;
+    }
+    
+    .tool-card img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px;
+      border-radius: 10px;
+    }
+    
+    .tool-card p {
+      color: #666;
+    }
+    
+    .back-button {
+      display: inline-block;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+    
+    .back-button:hover {
+      background-color: #555;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <a href="index.html" style="color:#00ffff;">⬅ 返回首页</a>
-    <h1>猪猪的文章 2</h1>
-    <p>这是第 2 篇博客的正文内容……</p>
+    <header>
+      <img class="avatar" src="https://placekitten.com/300/300" alt="Yuli头像">
+      <h1>Yuli的博客</h1>
+      <p class="subtitle">探索技术 · 记录生活 · 把世界点亮</p>
+    </header>
+    
+    <div class="blog-page">
+      <h1>🛠 效率工具 TOP 5</h1>
+      <p>在当今快节奏的世界中，提高工作效率变得越来越重要。以下是Yuli个人推荐的五款效率工具，它们帮助我从混乱到掌控，让工作和生活更加有序。</p>
+      
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Notion</h3>
+          <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Notion">
+          <p>Notion是一个全能的知识管理工具。它可以作为笔记应用、任务管理器、数据库以及团队协作平台。我使用Notion来规划项目、记录想法和管理日常生活。</p>
+          <a href="https://www.notion.so/" target="_blank">了解更多 →</a>
+        </div>
+        
+        <div class="tool-card">
+          <h3>Codex</h3>
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Codex">
+          <p>Codex是一个功能强大的代码编辑器，支持多种编程语言。它具有智能代码补全、语法检查和代码格式化功能，让编程变得更高效、更愉悦。</p>
+          <a href="https://codex-editor.com/" target="_blank">了解更多 →</a>
+        </div>
+        
+        <div class="tool-card">
+          <h3>Trello</h3>
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Trello">
+          <p>Trello使用看板方式帮助你整理任务和项目。通过卡片和清单，你可以直观地看到项目的进度，轻松管理复杂的工作流程。</p>
+          <a href="https://trello.com/" target="_blank">了解更多 →</a>
+        </div>
+        
+        <div class="tool-card">
+          <h3>Grammarly</h3>
+          <img src="https://images.unsplash.com/photo-1516302752625-fcc3c4d3a94f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Grammarly">
+          <p>Grammarly是一款优秀的语法检查工具。它不仅可以发现语法错误，还能提供建议改善你的写作风格，帮助你写出更加专业和流畅的文字。</p>
+          <a href="https://www.grammarly.com/" target="_blank">了解更多 →</a>
+        </div>
+        
+        <div class="tool-card">
+          <h3>Focus@Will</h3>
+          <img src="https://images.unsplash.com/photo-1551739440-5dd934d3a94a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Focus@Will">
+          <p>Focus@Will是一款专注于提高专注力的音乐应用。它提供经过科学验证的音乐和声音，帮助你进入深度工作状态，提高工作效率。</p>
+          <a href="https://www.focusatwill.com/" target="_blank">了解更多 →</a>
+        </div>
+        
+        <div class="tool-card">
+          <h3>RescueTime</h3>
+          <img src="https://images.unsplash.com/photo-1538370965046-79c0d6907d47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="RescueTime">
+          <p>RescueTime自动跟踪你的时间使用情况，提供详细的报告。通过了解自己的时间分配，你可以更好地管理时间和提高生产力。</p>
+          <a href="https://www.rescuetime.com/" target="_blank">了解更多 →</a>
+        </div>
+      </div>
+      
+      <p>这些工具已经成为我日常工作和生活的重要组成部分。它们帮助我保持组织性、提高效率，并让我有更多时间专注于真正重要的事情。</p>
+      <p>当然，工具只是一种辅助，关键还在于我们如何使用它们来改变自己的工作习惯。希望这些推荐能对你有所帮助！</p>
+      
+      <a href="index.html" class="back-button">返回主页</a>
+    </div>
+    
+    <footer>
+      <p>&copy; 2023 Yuli的博客 | 探索技术与生活的点滴</p>
+    </footer>
   </div>
 </body>
 </html>
